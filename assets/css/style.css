@@ -10,6 +10,7 @@ a {
 }
 
 header {
+    display: block;
     font-size: 30px;
     font-weight: bold;
     width: 100%;
@@ -53,7 +54,7 @@ main {
     height: 25%;
     padding: 10px;
     background:rgba(160, 160, 160, 0.0);
-    position: absolute;
+    position: fixed;
     top: 60px;
     left: 10px;
 }
@@ -64,3 +65,23 @@ main {
     object-fit: cover;
 }
 
+/* Bootstrap media query for portrait phones */
+@media only screen and (max-width: 575.98px) {
+  header {
+      text-align: center;
+  }
+  
+    h1 {
+      border-right: 0px;
+  }
+
+  nav {
+      display: block;
+      text-align: center;
+  }
+
+  .blurb {
+      width: 50%;
+      top: 80px;
+  }
+}
