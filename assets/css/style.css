@@ -60,7 +60,7 @@ main {
 }
 
 .background-img {
-    width: 100%;
+    width: 100vw;
     height: 800px;
     object-fit: cover;
 }
@@ -70,7 +70,7 @@ main {
   header {
       text-align: center;
   }
-  
+
     h1 {
       border-right: 0px;
   }
