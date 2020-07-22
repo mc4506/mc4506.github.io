@@ -1,87 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    box-sizing: border-box;
+    background: rgba(215, 239, 255, 0.75);
     font-family: Arial, Helvetica, sans-serif;
-    background: rgba(0, 0, 0, 0.85);
-}
-
-a {
-    color: brown;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-header {
-    display: block;
-    font-size: 30px;
-    font-weight: bold;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 10px;
-    color: white;
-    position: fixed;
-    z-index: 1;
 }
 
 h1 {
-    display: inline-block;
-    border-right: 2px solid white;
-    width: 245px;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 0 16px;
 }
 
-nav {
-    display: inline-block;
-    padding-left: 5px;
+h1>span {
+    font-size: 20px;
 }
 
-nav ul li {
-    display: inline-block;
-    font-size: 16px;
-    padding-right: 10px;
+li>a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
 }
 
-li a {
-    color: white;
-    text-decoration-style: none;
-}
-main {
+.header {
+    width: 100%;
+    height: 75px;
+    background: rgb(2, 117, 194);
     position: fixed;
+    display: flex;
+    align-items: center;
     top: 0px;
-    z-index: 0;
+    left: 0px;
+    box-shadow: 0px 2px 5px 0px rgba(78, 78, 78, 0.75);
+    z-index: 1;
 }
 
-.blurb {
-    display: block;
-    width: 400px;
-    height: 25%;
-    padding: 10px;
-    background:rgba(160, 160, 160, 0.0);
-    position: fixed;
-    top: 60px;
-    left: 10px;
+.top-nav-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-nav-display {
+    display: none;
+}
+
+.main-container {
+    margin: 75px 0px 60px 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 .background-img {
-    width: 100vw;
-    height: 800px;
-    object-fit: cover;
+    background: url("../img/skijump.jpg") no-repeat center center;
+    background-size: cover;
 }
 
-/* Bootstrap media query for portrait phones */
-@media only screen and (max-width: 575.98px) {
-  header {
-      text-align: center;
-  }
+.bottom-nav-container {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    background: rgba(2, 117, 194, 0.75);
+    backdrop-filter: blur(8px);
+    box-shadow: 0px -2px 5px 0px rgba(78, 78, 78, 0.75);
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 300;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.icons {
+    margin: 6px auto;
+    width: 24px;
+    cursor: pointer;
+}
+
+
+/* .collapse-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+} */
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.wrapper {
+    width: 100%;
+    height: 200px;
+    background: #fff8ec;
+    padding-top: 16px;
+    overflow-y: auto;
+    /* border-bottom: 1px solid #b6b6b6; */
+    position: relative;
+}
+
+.about-me-wrapper {
+    height: 180px;
+}
+
+.turnstile {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 32px;
+    cursor: pointer;
+}
+
+.content {
+    font-size: 16px;
+    color: #000000;
+    margin-left: 32px;
+    margin-right: 32px;
+}
+
+.collapseBtn {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 20px;
+    top: 28px;
+    cursor: pointer;
+}
+
+@keyframes turn-down {
+    0% {
+        transform-origin: top left;
+    }
+
+    100% {
+        transform-origin: top left;
+        transform: rotate(90deg);
+        width: 200px;
+        height: 32px;
+        padding-left: 10px;
+    }
+}
+
+@keyframes turn-up {
+    0% {
+        transform-origin: top left;
+        transform: rotate(90deg);
+        height: 32px;
+        padding-left: 10px;
+    }
+
+    100% {
+        transform-origin: top left;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes collapse {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 32px;
+    }
+}
+
+@keyframes expand {
+    0% {
+        width: 32px;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+/* Weather Widget Styles */
+
+h3 {
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.weather-widget-wrapper {
+    height: 385px;
+}
+
+.weather-widget {
+    background-color: #f9f3c8;
+    border-radius: 15px;
+    margin-right: 32px;
+    padding: 24px 14px;
+    box-shadow: 0px 2px 6px 0px rgba(23, 23, 23, 0.5);
+}
+
+#city,
+#today {
+    flex-basis: 100%;
+}
+
+.weather-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.weather-card-content {
+    padding-right: 12px;
+}
+
+.forecast-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#city {
+    padding-top: 16px;
+}
+
+/* Sample Work Product Cards */
+.products-wrapper {
+    height: 450px;
+    overflow: visible;
+
+}
+
+.product-card-row {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.image-card {
+    text-align: center;
+    flex: 0 0 265px;
+    border-radius: 15px;
+    height: 350px;
+    margin: 5px 32px 5px 2px;
+    padding: 16px;
+    box-shadow: 0px 2px 6px 0px rgba(23, 23, 23, 0.5);
+    overflow: visible;
+}
+
+.product-card {
+    flex: 0 0 265px;
+    background-color: #bce4fa;
+    border-radius: 15px;
+    height: 350px;
+    margin: 5px 32px 5px 2px;
+    padding: 16px;
+    box-shadow: 0px 2px 6px 0px rgba(23, 23, 23, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: fit;
+}
+
+
+@media (min-width: 768px) {
+    .main-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        margin-bottom: 0px;
+    }
+
+    .background-img {
+        background: url("../img/sunrise.jpg") no-repeat center center;
+        background-size: cover;
+    }
+
+    .bottom-nav-container {
+        display: none;
+    }
+
+    .top-nav-display {
+        display: block;
+    }
+
+    .nav-list {
+        font-size: 18px;
+    }
+
+    .weather-widget {
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .weather-card {
+        justify-content: center;
+    }
+
+    .forecast-wrapper {
+        justify-content: space-evenly;
+    }
+
+    #city,
+    #today {
+        text-align: center;
+    }
+
+
+}
+
+@media (min-width: 1200px) {
 
     h1 {
-      border-right: 0px;
-  }
+        font-size: 32px;
+    }
 
-  nav {
-      display: block;
-      text-align: center;
-  }
+    h1>span {
+        font-size: 24px;
+    }
 
-  .blurb {
-      width: 50%;
-      top: 80px;
-  }
+    .main-container {
+        width: 80%;
+    }
+
+    .top-nav-container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .background-img {
+        background: url("../img/mirror-lake.jpg") no-repeat center center;
+        background-size: cover;
+    }
+
+    .weather-widget {
+        width: 50%;
+    }
+
+}
+
+/* The switch - the box around the slider */
+.switch-label {
+    color: #ffffff;
+    padding: 0px;
+    margin: 0px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+    margin: 6px 16px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #56f321;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #56f321;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
