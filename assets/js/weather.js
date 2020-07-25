@@ -3,8 +3,8 @@ var apikey = "20429f05beb7b7ddca41ce6d64ba493b";
 
 $(document).ready(function () {
     let savedCity = getSavedCity();
-    // display weather of last city in cities array using City ID query
-    displayWeather(`id=${savedCity[0].id}`);
+    // display weather of last city in city using City ID query
+    displayWeather(`id=${savedCity.id}`);
 
     // click event to search a city, display weather of tht city and save that city
     $("#search-btn").on("click", function (event) {
@@ -156,7 +156,7 @@ function storeCityName(cityName, countryName, cityID) {
     localStorage.setItem("city", JSON.stringify(city));
 }
 
-// determine if city array has been previously stored or not
+// determine if city has been previously stored or not
 function getSavedCity() {
     const defaultCity = {
         name: "Leonia",
@@ -164,6 +164,6 @@ function getSavedCity() {
         id: 5100399
     };
 
-    let city = JSON.parse(localStorage.getItem("city")) || [defaultCity];
+    let city = JSON.parse(localStorage.getItem("city")) || defaultCity;
     return city;
 }
