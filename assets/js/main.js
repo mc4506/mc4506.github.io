@@ -56,6 +56,10 @@ $(document).ready(function () {
 const saveSticky = () => {
   let text = $('#sticky').val();
   localStorage.setItem("sticky", text);
+  $('.sticky-label').text("Sticky - Saved to Local Storage");
+  setTimeout(() => {
+    $('.sticky-label').text("Sticky");
+  }, 1000);
 };
 
 
