@@ -153,17 +153,17 @@ function storeCityName(cityName, countryName, cityID) {
         country: countryName,
         id: cityID
     };
-    localStorage.setItem("cities", JSON.stringify(city));
+    localStorage.setItem("city", JSON.stringify(city));
 }
 
-// determine if cities array has been previously stored or not
+// determine if city array has been previously stored or not
 function getSavedCity() {
     const defaultCity = {
-        name: "Fort Lee",
+        name: "Leonia",
         country: "US",
-        id: 5098135
+        id: 5100399
     };
 
-    let city = JSON.parse(localStorage.getItem("cities")) || [defaultCity];
+    let city = JSON.parse(localStorage.getItem("city")) || [defaultCity];
     return city;
 }
