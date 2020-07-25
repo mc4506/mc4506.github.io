@@ -1,27 +1,18 @@
 // Global variables
 var apikey = "20429f05beb7b7ddca41ce6d64ba493b";
-var cities; // an array
 
 $(document).ready(function () {
-    // setup cities array based on whether if it was previously stored or not. If not previously stored push a defaultCity into the array
-    getSavedCities();
+    let savedCity = getSavedCity();
     // display weather of last city in cities array using City ID query
-    displayWeather(`id=${cities[cities.length - 1].id}`);
+    displayWeather(`id=${savedCity[0].id}`);
 
-    // click event to add a city, display weather of tht city and save that city
+    // click event to search a city, display weather of tht city and save that city
     $("#search-btn").on("click", function (event) {
         event.preventDefault();
         // query using City Name
         let cityName = 'q=' + $("#city-input").val();
         displayWeather(cityName);
     });
-
-    // click to close modal window
-    $('.close').on('click', function () {
-        event.stopPropagation();
-        $('.modal').css("display", "none");
-    })
-
 });
 
 // ajax GET request to OWM Current Weather API based on city name
@@ -42,8 +33,7 @@ function displayWeather(cityParam) {
         $("#city").text(response.name + ", " + response.sys.country);
         oneCall(response.coord.lat, response.coord.lon);
     }, function () { // callback function if Promise is rejected
-        // alert("City not found");
-        $('.modal').css("display", "block");
+        $('#city').text("City Not Found");
     });
 }
 
@@ -52,7 +42,6 @@ function oneCall(lat, lon) {
     let units = "&units=imperial";
     let oneCallQueryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}${units}&exclude=minutely,hourly&appid=${apikey}`;
     let weatherIconURL = "https://openweathermap.org/img/w/";
-    // let backgroundImgURL = 'linear-gradient(rgba(128,128,128,0.15),rgba(128,128,128,0.15)), url("./assets/img/';
 
     $.ajax({
         url: oneCallQueryURL,
@@ -164,32 +153,17 @@ function storeCityName(cityName, countryName, cityID) {
         country: countryName,
         id: cityID
     };
-
-    // find if city already exists in cities array
-    let j = cities.findIndex(function (thisCity) {
-        return thisCity.id === cityID;
-    });
-    // console.log(j);
-    // if city object does not exist in the cities array, then push it. Else do nothing.
-    if (j < 0) {
-        cities.push(city);
-        localStorage.setItem("cities", JSON.stringify(cities));
-    }
-    //   refreshCityList();
+    localStorage.setItem("cities", JSON.stringify(city));
 }
 
 // determine if cities array has been previously stored or not
-function getSavedCities() {
+function getSavedCity() {
     const defaultCity = {
         name: "Fort Lee",
         country: "US",
         id: 5098135
     };
-    // if localStorage has no record of cities, add create cities array with defaultCity as first entry
-    if (localStorage.getItem("cities") === null) {
-        cities = [defaultCity];
-        // if localStorage is not empty, get stored cities array
-    } else {
-        cities = JSON.parse(localStorage.getItem("cities"));
-    }
+
+    let city = JSON.parse(localStorage.getItem("cities")) || [defaultCity];
+    return city;
 }
