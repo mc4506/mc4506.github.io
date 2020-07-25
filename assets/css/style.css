@@ -271,7 +271,7 @@ h4 {
 }
 
 .product-card {
-    flex: 0 0 265px;
+    flex: 0 0 233px;
     background-color: #bce4fa;
     /* border-radius: 15px; */
     height: 318px;
@@ -281,6 +281,19 @@ h4 {
     display: flex;
     flex-direction: column;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#password,
+#generate {
+    padding: 6px;
+}
+
 
 .screenshot {
     width: 100%;

@@ -145,21 +145,31 @@
                     </h2>
                     <div class="content product-card-row">
                         <div class="product-card">
-                            <h3>Password Generator Widget</h3>
-                            <label for="password-slider">Password Length</label>
-                            <p id="password-length">12</p>
+                            <h3>Password Generator</h3>
+                            <div class="row">
+                                <label class="label" for="password-slider">Password Length</label>
+                                <p id="password-length">12</p>
+                            </div>
                             <input type="range" min="8" max="16" value="12" id="password-slider">
-                            <label for="lowercase">Lowercase</label>
-                            <input type="checkbox" id="lowercase" checked>
-                            <label for="uppercase">Uppercase</label>
-                            <input type="checkbox" id="uppercase">
-                            <label for="numeric">Numbers</label>
-                            <input type="checkbox" id="numeric">
-                            <label for="special">Special Characters</label>
-                            <input type="checkbox" id="special">
+                            <div class="row">
+                                <label class="label" for="lowercase">Lowercase</label>
+                                <input class="checkbox" type="checkbox" id="lowercase" checked>
+                            </div>
+                            <div class="row">
+                                <label class="label" for="uppercase">Uppercase</label>
+                                <input class="checkbox" type="checkbox" id="uppercase">
+                            </div>
+                            <div class="row">
+                                <label class="label" for="numeric">Numbers</label>
+                                <input class="checkbox" type="checkbox" id="numeric">
+                            </div>
+                            <div class="row">
+                                <label class="label" for="special">Special Characters</label>
+                                <input class="checkbox" type="checkbox" id="special">
+                            </div>
                             <button id="generate">Generate Password
                             </button>
-                            <label for="password">Password</label>
+                            <label class="label" for="password">Password</label>
                             <input id="password" size="20"></input>
                         </div>
                         <div class="image-card">
