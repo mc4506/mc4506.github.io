@@ -5,7 +5,7 @@
 
 body {
     box-sizing: border-box;
-    background: rgba(215, 239, 255, 0.75);
+    /* background: rgba(215, 239, 255, 1); */
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -28,7 +28,7 @@ li>a {
 .header {
     width: 100%;
     height: 75px;
-    background: rgb(2, 117, 194);
+    background: rgba(65,65, 65, 1);
     position: fixed;
     display: flex;
     align-items: center;
@@ -54,11 +54,13 @@ li>a {
     margin: 75px 0px 60px 0px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .background-img {
     background: url("../img/skijump.jpg") no-repeat center center;
     background-size: cover;
+    /* z-index: -2; */
 }
 
 .bottom-nav-container {
@@ -67,7 +69,7 @@ li>a {
     left: 0px;
     width: 100%;
     height: 60px;
-    background: rgba(2, 117, 194, 0.75);
+    background: rgba(65,65, 65, 0.75);
     backdrop-filter: blur(8px);
     box-shadow: 0px -2px 5px 0px rgba(78, 78, 78, 0.75);
 }
@@ -112,10 +114,10 @@ li>a {
 .wrapper {
     width: 100%;
     height: 200px;
-    background: #fff8ec;
+    background: rgba(255,255,255,1);
     padding-top: 16px;
     overflow-y: auto;
-    /* border-bottom: 1px solid #b6b6b6; */
+    border-bottom: 1px solid #b6b6b6;
     position: relative;
 }
 
@@ -225,6 +227,7 @@ h4 {
 #city,
 #today {
     flex-basis: 100%;
+    text-align: center;
 }
 
 .weather-card {
@@ -249,7 +252,7 @@ h4 {
     padding-top: 16px;
 }
 
-/* Sample Work Product Cards */
+/* Bootcamp Cards */
 .products-wrapper {
     height: 450px;
     overflow: visible;
@@ -265,10 +268,11 @@ h4 {
 .image-card {
     text-align: center;
     flex: 0 0 265px;
+    /* border: 5px solid red; */
     border-radius: 15px;
     height: 350px;
     margin: 5px 32px 5px 2px;
-    padding: 16px;
+    /* padding: 16px; */
     box-shadow: 0px 2px 6px 0px rgba(23, 23, 23, 0.5);
     overflow: visible;
 }
@@ -276,8 +280,8 @@ h4 {
 .product-card {
     flex: 0 0 265px;
     background-color: #bce4fa;
-    border-radius: 15px;
-    height: 350px;
+    /* border-radius: 15px; */
+    height: 318px;
     margin: 5px 32px 5px 2px;
     padding: 16px;
     box-shadow: 0px 2px 6px 0px rgba(23, 23, 23, 0.5);
@@ -330,12 +334,6 @@ h4 {
     .forecast-wrapper {
         justify-content: space-evenly;
     }
-
-    #city,
-    #today {
-        text-align: center;
-    }
-
 
 }
 
@@ -438,4 +436,30 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+/* Sticky Note */
+#sticky-note {
+    position: absolute;
+    top: 42px;
+    left: 42px;
+    background-color: rgba(102,178,255,0.75);
+    box-shadow: -2px 2px 2px 0px rgba(78, 78, 78, 0.75);
+    display: flex;
+    flex-direction: column;
+}
+
+#sticky {
+    width: 100%;
+    height: 100%;
+    /* min-width: 220px;
+    min-height: 160px; */
+    background-color: rgba(102,178,255,0.50);
+    overflow: hidden;
+    border: none;
+    resize: none;
+}
+
+#sticky:focus{
+   outline: none;
 }
