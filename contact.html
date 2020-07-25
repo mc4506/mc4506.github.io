@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Michael S Chen | Contact</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="top-nav-container">
+            <h1>Michael S Chen, <span>P.E.</span></h1>
+            <div class="top-nav-display">
+                <ul class="nav-list ">
+                    <li class="nav-list-item">
+                        <a href="index.html">Main Page</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a href="#">My Resume</a>
+                    </li>
+                    <!-- <li class="nav-list-item">
+                        <a href="#">Contact Me</a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="main-container">
+        <form id="contact-form">
+            <h2 class="contact-me">Contact Me <span><h5>(Form submission does not currently work)</h5></span></h2>
+            <label for="name" class="label">Enter Your Name</label>
+            <input id="name" type="text">
+            <label for="email" class="label">Enter Your Email Address</label>
+            <input id="email" type="email">
+            <label for="message" class="label">Enter Your Message</label>
+            <textarea id="message" rows="10"></textarea>
+            <input id="submit-button" type="submit" value="Submit">
+        </form>
+    </main>
+
+    <!-- Sticky Nav at bottom -->
+    <footer>
+        <nav class="bottom-nav-container">
+            <ul class="nav-list">
+                <li class="nav-list-item">
+                    <a href="index.html"><img src="assets/icons/internet.svg" alt="my work" class="icons">Main Page</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="#"><img src="assets/icons/document.svg" alt="my resume" class="icons">My Resume</a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- <script type="text/javascript">
+        let submitBtn = document.getElementById('submit-button');
+        submitBtn.addEventListener('click', function(event){
+            const message = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+            }
+
+        })
+    </script> -->
+</body>
+
+</html>

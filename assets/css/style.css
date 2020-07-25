@@ -5,7 +5,6 @@
 
 body {
     box-sizing: border-box;
-    /* background: rgba(215, 239, 255, 1); */
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -51,16 +50,16 @@ li>a {
 }
 
 .main-container {
-    margin: 75px 0px 60px 0px;
+    margin: 0px 0px 60px 0px;
     display: flex;
     flex-direction: column;
     position: relative;
+    top: 75px;
 }
 
 .background-img {
     background: url("../img/skijump.jpg") no-repeat center center;
     background-size: cover;
-    /* z-index: -2; */
 }
 
 .bottom-nav-container {
@@ -86,7 +85,7 @@ li>a {
     height: 100%;
 }
 
-.nav-list-item {
+.nav-list-item >a{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,19 +97,13 @@ li>a {
     cursor: pointer;
 }
 
-
-/* .collapse-container {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-} */
-
 .list-container {
     display: flex;
     flex-direction: column;
     list-style: none;
 }
 
+/* Main Page Turnstile Animations */
 .wrapper {
     width: 100%;
     height: 200px;
@@ -295,6 +288,136 @@ h4 {
     object-fit: fit;
 }
 
+/* Toggle (from W3C Schools example) */
+.switch-label {
+    color: #ffffff;
+    padding: 0px;
+    margin: 0px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+    margin: 6px 16px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #56f321;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #56f321;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+}
+
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Sticky Note */
+#sticky-note {
+    position: absolute;
+    top: 42px;
+    left: 42px;
+    background-color: rgba(102,178,255,0.75);
+    box-shadow: -2px 2px 2px 0px rgba(78, 78, 78, 0.75);
+    display: flex;
+    flex-direction: column;
+}
+
+#sticky {
+    width: 100%;
+    height: 100%;
+    /* min-width: 220px;
+    min-height: 160px; */
+    background-color: rgba(102,178,255,0.50);
+    overflow: hidden;
+    border: none;
+    resize: none;
+}
+
+#sticky:focus{
+   outline: none;
+}
+
+/* Contact Form Styles */
+
+.contact-me {
+    color: #000000;
+    font-size: 20px;
+    padding: 16px 0px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 32px;
+}
+
+.label {
+    padding: 6px 0px;
+    font-size: 14px;
+}
+
+#message {
+    resize: none;
+    overflow-y: auto;
+}
+
+#name,
+#email,
+#message {
+    padding: 0.5em;
+}
+
+#submit-button {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 16px;
+    width: 100px;
+}
+
 
 @media (min-width: 768px) {
     .main-container {
@@ -334,6 +457,11 @@ h4 {
     .forecast-wrapper {
         justify-content: space-evenly;
     }
+    
+    #contact-form {
+        width: 60%;
+        margin: 0 auto;
+    }
 
 }
 
@@ -366,100 +494,9 @@ h4 {
         width: 50%;
     }
 
-}
+    #contact-form {
+        width: 50%;
+        margin: 0 auto;
+    }
 
-/* The switch - the box around the slider */
-.switch-label {
-    color: #ffffff;
-    padding: 0px;
-    margin: 0px;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 42px;
-    height: 24px;
-    margin: 6px 16px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-/* The slider */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked+.slider {
-    background-color: #56f321;
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #56f321;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(18px);
-    -ms-transform: translateX(18px);
-    transform: translateX(18px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 24px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-/* Sticky Note */
-#sticky-note {
-    position: absolute;
-    top: 42px;
-    left: 42px;
-    background-color: rgba(102,178,255,0.75);
-    box-shadow: -2px 2px 2px 0px rgba(78, 78, 78, 0.75);
-    display: flex;
-    flex-direction: column;
-}
-
-#sticky {
-    width: 100%;
-    height: 100%;
-    /* min-width: 220px;
-    min-height: 160px; */
-    background-color: rgba(102,178,255,0.50);
-    overflow: hidden;
-    border: none;
-    resize: none;
-}
-
-#sticky:focus{
-   outline: none;
 }
