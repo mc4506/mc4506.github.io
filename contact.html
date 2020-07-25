@@ -30,17 +30,17 @@
     <main class="main-container">
         
 
-        <form id="contact-form">
-            <h5><img src="assets/icons/github.png" style="width: 24px;" alt="github icon"> <a href="github.com/mc4506">mc4506</a></h5>
+        <form id="contact-form" action="mailto:mike.sihong.chen@gmail.com" method="get">
+            <h5><img src="assets/icons/github.png" style="width: 24px;" alt="github icon"> <a href="https://www.github.com/mc4506">mc4506</a></h5>
             <h5><img src="assets/icons/linkedin.png" style="width: 24px;" alt="linkedin icon"> <a href="https://www.linkedin.com/in/michael-chen-8745061a7/">Michael Chen</a></h5>
             <h5><img src="assets/icons/email-black.svg" style="width: 24px;" alt="email icon"> <a href="mailto: mike.sihong.chen@gmail.com">mike.sihong.chen@gmail.com</a></h5>
-            <h2 class="contact-me">Contact Me <span><h5>(Form submission does not currently work)</h5></span></h2>
-            <label for="name" class="label">Enter Your Name</label>
-            <input id="name" type="text">
+            <h2 class="contact-me">Contact Me</h2>
+            <!-- <label for="name" class="label">Enter Your Name</label>
+            <input id="name" name="name" type="text"> -->
             <label for="email" class="label">Enter Your Email Address</label>
-            <input id="email" type="email">
+            <input id="email" name="email" type="email">
             <label for="message" class="label">Enter Your Message</label>
-            <textarea id="message" rows="10"></textarea>
+            <textarea id="message" name="body" rows="10"></textarea>
             <input id="submit-button" type="submit" value="Submit">
         </form>
     </main>
@@ -59,17 +59,6 @@
         </nav>
     </footer>
 
-    <!-- <script type="text/javascript">
-        let submitBtn = document.getElementById('submit-button');
-        submitBtn.addEventListener('click', function(event){
-            const message = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value,
-            }
-
-        })
-    </script> -->
 </body>
 
 </html>
