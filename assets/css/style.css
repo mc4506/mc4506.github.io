@@ -360,6 +360,8 @@ input:checked+.slider:before {
     position: absolute;
     top: 42px;
     left: 42px;
+    width: 220px;
+    height: 160px;
     background-color: rgba(102,178,255,0.75);
     box-shadow: -2px 2px 2px 0px rgba(78, 78, 78, 0.75);
     display: flex;
