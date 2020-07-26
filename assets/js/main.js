@@ -11,23 +11,25 @@ $(document).ready(function () {
   headerSwitch.on('click', toggleAll);
   footerSwitch.on('click', toggleAll);
 
-  let stickyDiv = $('#sticky-note');
+  getSavedSticky();
+
+  $(window).resize(()=>getSavedSticky());
   
-  stickyDiv.resizable({
+  $('#sticky-note').resizable({
     containment: "parent",
     minWidth: 220,
     minHeight: 160
   });
 
-  stickyDiv.draggable({
+  $('#sticky-note').draggable({
     containment: "parent",
   });
   
-  stickyDiv.on("drag", function(event,ui){
+  $('#sticky-note').on("drag", function(event,ui){
     let position = $('#sticky-note').position();
     localStorage.setItem("sticky-position", JSON.stringify(position));
   });
-  stickyDiv.on("resize", function(event, ui){
+  $('#sticky-note').on("resize", function(event, ui){
     let width = $('#sticky-note').width();
     let height = $('#sticky-note').height();
     let stickySize = [width, height];
@@ -35,23 +37,33 @@ $(document).ready(function () {
   });
 
   let saveStickyBtn = $('#save-sticky');
+  saveStickyBtn.on('click', saveSticky);
+});
+
+const getSavedSticky = function(){
   let savedSticky = localStorage.getItem("sticky") || "";
   $('#sticky').text(savedSticky);
 
-  let savedStickySize = JSON.parse(localStorage.getItem("sticky-size"));
-  if(savedStickySize !== null ){
-    stickyDiv.width(savedStickySize[0]);
-    stickyDiv.height(savedStickySize[1]);
+  let savedStickySize = JSON.parse(localStorage.getItem("sticky-size")) || [220, 160];
+  if(savedStickySize[0]>$('.main-container').innerWidth()){
+    $('#sticky-note').width($('.main-container').innerWidth()-42);
+    $('#sticky-note').height(savedStickySize[1]);
+  } else{
+    $('#sticky-note').width(savedStickySize[0]);
+    $('#sticky-note').height(savedStickySize[1]);
   };
 
-  let savedStickyPosition = JSON.parse(localStorage.getItem("sticky-position"));
-  if(savedStickyPosition !== null){
-    stickyDiv.css("top", savedStickyPosition.top);
-    stickyDiv.css("left", savedStickyPosition.left);
+  let savedStickyPosition = JSON.parse(localStorage.getItem("sticky-position")) || [42, 42];
+  if(savedStickyPosition.left < 42 || savedStickyPosition.left > $('.main-container').innerWidth()){
+    $('#sticky-note').css("top", savedStickyPosition.top);
+    $('#sticky-note').css("left", 42); 
+  } else {
+    $('#sticky-note').css("top", savedStickyPosition.top);
+    $('#sticky-note').css("left", savedStickyPosition.left);
   }
-
-  saveStickyBtn.on('click', saveSticky);
-});
+  // console.log($('.main-container').innerWidth());
+  // console.log({"width": $('#sticky-note').width(), "height": $('#sticky-note').height(), "top": $('#sticky-note').css("top"), "left": $('#sticky-note').css("left")});
+};
 
 const saveSticky = () => {
   let text = $('#sticky').val();
