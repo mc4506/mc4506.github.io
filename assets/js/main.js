@@ -82,7 +82,7 @@ const toggleAll = function () {
         $(this).parent().width(300);
         $(this).css("animation", "turn-up 0.3s ease-out both");
         $(this).next().css("visibility", "visible");
-        $(this).parent().css("overflow", "scroll");
+        $(this).parent().css("overflow", "auto");
         $(this).siblings('.collapseBtn').css("visibility", "visible");
         $(this).parent().css("box-shadow", "none")
    });
@@ -119,7 +119,7 @@ function animateClickTurnstile() {
     $(this).parent().width(300);
     $(this).css("animation", "turn-up 0.3s ease-out both");
     $(this).next().css("visibility", "visible");
-    $(this).parent().css("overflow", "scroll");
+    $(this).parent().css("overflow", "auto");
     $(this).siblings('.collapseBtn').css("visibility", "visible");
     $(this).parent().css("box-shadow", "none")
   }
