@@ -6,6 +6,7 @@
 body {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f3f5;
 }
 
 h1 {
@@ -107,7 +108,7 @@ li>a {
 .wrapper {
     width: 100%;
     height: 200px;
-    background: rgba(255,255,255,1);
+    background: #f1f3f5;
     padding-top: 16px;
     overflow-y: auto;
     border-bottom: 1px solid #b6b6b6;
@@ -214,7 +215,7 @@ h4 {
     /* border-radius: 15px; */
     margin-right: 32px;
     padding: 24px 14px;
-    box-shadow: 0px 2px 6px 0px rgba(23, 23, 23, 0.5);
+    box-shadow: 0px 2px 5px -2px rgba(23, 23, 23, 0.5);
 }
 
 #city,
@@ -261,7 +262,7 @@ h4 {
     flex: 0 0 265px;
     height: 350px;
     margin: 5px 32px 5px 2px;
-    box-shadow: 0px 2px 6px 0px rgba(23, 23, 23, 0.5);
+    box-shadow: 0px 2px 6px -2px rgba(23, 23, 23, 0.5);
     overflow: visible;
     position: relative;
 }
@@ -289,7 +290,7 @@ h4 {
     height: 318px;
     margin: 5px 32px 5px 2px;
     padding: 16px;
-    box-shadow: 0px 2px 6px 0px rgba(23, 23, 23, 0.5);
+    box-shadow: 0px 2px 4px -2px rgba(23, 23, 23, 0.5);
     display: flex;
     flex-direction: column;
 }
@@ -311,6 +312,10 @@ h4 {
     width: 100%;
     height: 100%;
     object-fit: fit;
+}
+
+.screenshot:hover {
+    transform: scale(1.04);
 }
 
 /* Toggle (from W3C Schools example) */
@@ -459,7 +464,7 @@ iframe {
     }
 
     .background-img {
-        background: url("../img/hangzhou.jpg") no-repeat center center;
+        background: url("../img/sunrise.jpg") no-repeat center center;
         background-size: cover;
     }
 
@@ -488,7 +493,7 @@ iframe {
     .forecast-wrapper {
         justify-content: space-evenly;
     }
-    
+
     #contact-form {
         width: 60%;
         margin: 0 auto;

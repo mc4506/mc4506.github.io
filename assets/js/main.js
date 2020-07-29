@@ -11,6 +11,8 @@ $(document).ready(function () {
   headerSwitch.on('click', toggleAll);
   footerSwitch.on('click', toggleAll);
 
+  let savedSticky = localStorage.getItem("sticky") || "";
+  $('#sticky').text(savedSticky);
   getSavedSticky();
 
   $(window).resize(()=>getSavedSticky());
@@ -41,8 +43,6 @@ $(document).ready(function () {
 });
 
 const getSavedSticky = function(){
-  let savedSticky = localStorage.getItem("sticky") || "";
-  $('#sticky').text(savedSticky);
 
   let savedStickySize = JSON.parse(localStorage.getItem("sticky-size")) || [220, 160];
   if(savedStickySize[0]>$('.main-container').innerWidth()){
