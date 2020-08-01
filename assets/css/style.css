@@ -2,17 +2,22 @@
     margin: 0;
     padding: 0;
 }
+html {
+    height: 100%;
+}
 
 body {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Cormorant Garamond', serif;
     background-color: #f1f3f5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
-    color: #ffffff;
+    color: #000000;
     font-size: 24px;
-    padding: 0 16px;
 }
 
 h1>span {
@@ -20,21 +25,27 @@ h1>span {
 }
 
 li>a {
-    margin: 0 15px;
+    margin: 0 30px;
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
+}
+
+p>a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 900;
 }
 
 .header {
     width: 100%;
     height: 75px;
-    background: rgba(65,65, 65, 1);
     position: fixed;
     display: flex;
     align-items: center;
     top: 0px;
     left: 0px;
-    box-shadow: 0px 2px 5px 0px rgba(78, 78, 78, 0.75);
+    background-color: #f1f3f5;
+    border-bottom: 1px solid #b6b6b6;
     z-index: 1;
 }
 
@@ -42,8 +53,8 @@ li>a {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    align-items: baseline;
+    justify-content: center;
 }
 
 .top-nav-display {
@@ -55,12 +66,10 @@ li>a {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 75px;
-}
-
-.background-img {
-    background: url("../img/skijump.jpg") no-repeat center center;
-    background-size: cover;
+    /* height: 100%; */
+    flex: 1 1 auto;
+    border-bottom: 1px solid #b6b6b6;
+    overflow: hidden;
 }
 
 .bottom-nav-container {
@@ -69,9 +78,9 @@ li>a {
     left: 0px;
     width: 100%;
     height: 60px;
-    background: rgba(65,65, 65, 0.75);
-    backdrop-filter: blur(8px);
-    box-shadow: 0px -2px 5px 0px rgba(78, 78, 78, 0.75);
+    background-color: #f1f3f5;
+    border-top: 1px solid #b6b6b6;
+    z-index: 99;
 }
 
 .nav-list {
@@ -79,7 +88,7 @@ li>a {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 300;
     list-style: none;
     width: 100%;
@@ -92,31 +101,29 @@ li>a {
     justify-content: center;
 }
 
-.icons {
-    margin: 6px auto;
-    width: 24px;
-    cursor: pointer;
+.about-me-wrapper {
+    padding: 16px 0px;
+    background-color: #f1f3f5;
+    border-bottom: 1px solid #b6b6b6;
+    margin-top: 75px;
 }
-
-.list-container {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
+.about-me {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-left: 32px;
 }
 
 /* Main Page Turnstile Animations */
 .wrapper {
     width: 100%;
-    height: 200px;
     background: #f1f3f5;
     padding-top: 16px;
-    overflow-y: auto;
-    border-bottom: 1px solid #b6b6b6;
-    position: relative;
-}
-
-.about-me-wrapper {
-    height: 180px;
+    /* margin-bottom: 60px; */
+    flex: 1 1 auto;
 }
 
 .turnstile {
@@ -124,10 +131,9 @@ li>a {
     font-size: 16px;
     font-weight: bold;
     color: #000000;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     margin-left: 32px;
-    cursor: pointer;
 }
 
 .content {
@@ -137,14 +143,16 @@ li>a {
     margin-right: 32px;
 }
 
-.collapseBtn {
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    right: 20px;
-    top: 28px;
+.project-list {
+    font-family: "Prata", serif;
+    list-style: none;
+}
+
+.project {
+    display: inline-block;
+    margin: 12px;
     cursor: pointer;
+    padding: 0;
 }
 
 @keyframes turn-down {
@@ -155,9 +163,11 @@ li>a {
     100% {
         transform-origin: top left;
         transform: rotate(90deg);
-        width: 200px;
-        height: 32px;
-        padding-left: 10px;
+        /* width: 200px; */
+        /* height: 32px; */
+        padding-left: 8px;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 }
 
@@ -165,8 +175,10 @@ li>a {
     0% {
         transform-origin: top left;
         transform: rotate(90deg);
-        height: 32px;
-        padding-left: 10px;
+        /* height: 32px; */
+        padding-left: 8px;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 
     100% {
@@ -195,102 +207,31 @@ li>a {
     }
 }
 
-/* Weather Widget Styles */
-
-h3 {
-    font-size: 16px;
-}
-
-h4 {
-    font-size: 14px;
-    font-weight: 100;
-}
-
-.weather-widget-wrapper {
-    height: 385px;
-}
-
-.weather-widget {
-    background-color: #f9f3c8;
-    /* border-radius: 15px; */
-    margin-right: 32px;
-    padding: 24px 14px;
-    box-shadow: 0px 2px 5px -2px rgba(23, 23, 23, 0.5);
-}
-
-#city,
-#today {
-    flex-basis: 100%;
-    text-align: center;
-}
-
-.weather-card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.weather-card-content {
-    padding-right: 12px;
-}
-
-.forecast-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#city {
-    padding-top: 16px;
-}
-
-/* Bootcamp Cards */
-.products-wrapper {
-    height: 450px;
-}
-
-.product-card-row {
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
-}
-
-.image-card {
-    text-align: center;
-    flex: 0 0 265px;
-    height: 350px;
-    margin: 5px 32px 5px 2px;
-    box-shadow: 0px 2px 6px -2px rgba(23, 23, 23, 0.5);
-    overflow: visible;
-    position: relative;
-}
+/* Project Cards */
 
 .github-link {
-    font-family: monospace;
-    font-size: 14px;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(255,255,255,0.65);
-    color: #555555;
+    font-size: 16px;
     padding: 3px;
     text-decoration: none;
-    /* width: 100%; */
-}
-.github-link:hover {
-    transform: scale(1.07);
+    width: 100%;
 }
 
 .product-card {
-    flex: 0 0 233px;
-    background-color: #bce4fa;
-    /* border-radius: 15px; */
-    height: 318px;
-    margin: 5px 32px 5px 2px;
+    background: transparent;
+    width: calc(100%-64px);
+    height: 100%;
     padding: 16px;
-    box-shadow: 0px 2px 4px -2px rgba(23, 23, 23, 0.5);
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    left: 32px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.widget-card {
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -310,107 +251,8 @@ h4 {
 
 .screenshot {
     width: 100%;
-    height: 100%;
-    object-fit: fit;
-}
-
-.screenshot:hover {
-    transform: scale(1.04);
-}
-
-/* Toggle (from W3C Schools example) */
-.switch-label {
-    color: #ffffff;
-    padding: 0px;
-    margin: 0px;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 42px;
-    height: 24px;
-    margin: 6px 16px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked+.slider {
-    background-color: #56f321;
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #56f321;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(18px);
-    -ms-transform: translateX(18px);
-    transform: translateX(18px);
-}
-
-.slider.round {
-    border-radius: 24px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-/* Sticky Note */
-#sticky-note {
-    position: absolute;
-    top: 42px;
-    left: 42px;
-    width: 220px;
-    height: 160px;
-    background-color: rgba(102,178,255,0.75);
-    box-shadow: 0px 2px 2px 0px rgba(78, 78, 78, 0.75);
-    display: flex;
-    flex-direction: column;
-}
-
-#sticky {
-    width: 100%;
-    height: 100%;
-    /* min-width: 220px;
-    min-height: 160px; */
-    background-color: rgba(102,178,255,0.50);
-    overflow: hidden;
-    border: none;
-    resize: none;
-}
-
-#sticky:focus{
-   outline: none;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 /* Contact Form Styles */
@@ -418,18 +260,21 @@ input:checked+.slider:before {
 .contact-me {
     color: #000000;
     font-size: 20px;
-    padding: 16px 0px;
+    /* padding: 16px 0px; */
+    margin-top: 32px;
 }
 
 #contact-form {
     display: flex;
     flex-direction: column;
     padding: 16px 32px;
+    margin-top: 75px;
 }
 
 .label {
     padding: 6px 0px;
-    font-size: 14px;
+    font-size: 16px;
+    margin-top: 16px;
 }
 
 #message {
@@ -444,8 +289,9 @@ input:checked+.slider:before {
 }
 
 #submit-button {
+    font-family: 'Cormorant Garamond', serif;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 16px;
     width: 100px;
 }
@@ -456,16 +302,21 @@ iframe {
 }
 
 @media (min-width: 768px) {
-    .main-container {
-        /* margin-left: auto;
-        margin-right: auto;
-        width: 90%; */
-        margin-bottom: 0px;
+
+    body {
+        flex-direction: row;
     }
 
-    .background-img {
-        background: url("../img/sunrise.jpg") no-repeat center center;
-        background-size: cover;
+    .about-me-wrapper {
+        width: 40%;
+        /* height: 100%; */
+        flex: 1 1 auto;
+    }
+
+    .main-container {
+        margin-top: 75px;
+        margin-bottom: 0px;
+        width: 60%;
     }
 
     .bottom-nav-container {
@@ -480,28 +331,30 @@ iframe {
         font-size: 18px;
     }
 
-    .weather-widget {
-        width: 65%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .weather-card {
-        justify-content: center;
-    }
-
-    .forecast-wrapper {
-        justify-content: space-evenly;
-    }
-
     #contact-form {
         width: 60%;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+    }
+
+    .product-card {
+        padding-left: 48px;
+        padding-right: 48px;
+        width: calc(100% - 128px);
     }
 
 }
 
 @media (min-width: 1200px) {
+
+    .about-me-wrapper {
+        width: 30%;
+    }
+
+    .main-container {
+        width: 70%;
+    }
 
     h1 {
         font-size: 32px;
@@ -511,28 +364,15 @@ iframe {
         font-size: 24px;
     }
 
-    .main-container {
-        /* width: 80%; */
-    }
-
     .top-nav-container {
-        /* width: 80%; */
         margin-left: auto;
         margin-right: auto;
     }
 
-    .background-img {
-        background: url("../img/mirror-lake.jpg") no-repeat center center;
-        background-size: cover;
-    }
-
-    .weather-widget {
-        width: 50%;
-    }
-
     #contact-form {
         width: 50%;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }

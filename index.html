@@ -4,15 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- <script src="assets/js/jquery-ui.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/weather.js" defer></script>
+    <!-- <script src="assets/js/weather.js" defer></script> -->
     <script src="assets/js/password.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;900&family=Prata&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
     <title>Michael S Chen</title>
 </head>
 
@@ -22,227 +21,144 @@
             <h1>Michael S Chen, <span>P.E.</span></h1>
             <div class="top-nav-display">
                 <ul class="nav-list ">
-                    <!-- <li class="nav-list-item">
-                        <a href="#">My Work</a>
-                    </li> -->
                     <li class="nav-list-item">
                         <a href="resume.html">My Resume</a>
                     </li>
                     <li class="nav-list-item">
                         <a href="contact.html">Contact Me</a>
                     </li>
-                    <li class="nav-list-item" style="text-align: center; margin-right: 16px;">
-                        <label class="switch">
-                            <input type="checkbox" id="header-switch">
-                            <span class="slider round"></span>
-                        </label>
-                        <p class="switch-label">Desktop</p>
-                    </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <main class="main-container background-img">
-        <div id="sticky-note">
-            <label class="sticky-label" for="sticky">Sticky</label>
-            <textarea name="sticky" id="sticky"></textarea>
-            <button type="button" id="save-sticky">Save</button>
+
+    <div class="about-me-wrapper">
+        <h2 class="about-me">
+            ABOUT ME
+        </h2>
+        <p class="content">
+            I'm a structural engineer and building envelope consultant, working at <a href="https://vidaris.com" target="_blank">Vidaris</a>, an architectural consulting firm in
+            New York City. I am learning Full-Stack web development at <a href="https://bootcamp.rutgers.edu/" target="_blank">Rutgers Coding Bootcamp</a>. I am learning and
+            enjoying coding in Javascript. I live in the
+            wonderful town of <a href="https://www.leonianj.gov" target="_blank">Leonia, NJ</a>. I hope to continue building cool and interesting apps.
+        </p>
+    </div>
+
+    <main class="main-container">
+        <div class="product-card" id="1">
+            <h1>Password Generator</h1>
+            <a class="github-link" href="https://github.com/mc4506/password-generator" target="_blank">https://github.com/mc4506/password-generator</a>
+            <div class="widget-card">
+                <div class="row">
+                    <label class="label" for="password-slider">Password Length</label>
+                    <p id="password-length">12</p>
+                </div>
+                <input type="range" min="8" max="16" value="12" id="password-slider">
+                <div class="row">
+                    <label class="label" for="lowercase">Lowercase</label>
+                    <input class="checkbox" type="checkbox" id="lowercase" checked>
+                </div>
+                <div class="row">
+                    <label class="label" for="uppercase">Uppercase</label>
+                    <input class="checkbox" type="checkbox" id="uppercase">
+                </div>
+                <div class="row">
+                    <label class="label" for="numeric">Numbers</label>
+                    <input class="checkbox" type="checkbox" id="numeric">
+                </div>
+                <div class="row">
+                    <label class="label" for="special">Special Characters</label>
+                    <input class="checkbox" type="checkbox" id="special">
+                </div>
+                <button id="generate">Generate Password
+                </button>
+                <label class="label" for="password">Password</label>
+                <input id="password" size="20"></input>
+            </div>
         </div>
-        <div class="collapse-container">
-            <ul class="list-container">
-                <li class="wrapper about-me-wrapper">
-                    <h2 class="turnstile">
-                        ABOUT ME
-                    </h2>
-                    <p class="content">
-                        I'm a structural engineer and building envelope consultant. I am currently a partner at <a
-                            href="https://vidaris.com" target="_blank">Vidaris</a>, an architectural consulting firm in
-                        New York City. I am learning Full-Stack web development at <a
-                            href="https://bootcamp.rutgers.edu/" target="_blank">Rutgers Coding Bootcamp</a>. I am learning and
-                        enjoying coding in Javascript. I live in the
-                        wonderful town of <a href="https://www.leonianj.gov" target="_blank">Leonia, NJ</a>, near the
-                        George Washington Bridge. I hope to continue building cool and interestig apps.
-                    </p>
-                    <button class="collapseBtn">
-                        <img src="assets/icons/back_arrow.svg" alt="Btn">
-                    </button>
-                </li>
+        <div class="product-card" id="2">
+            <a href="https://mc4506.github.io/weather-dashboard/" target="_blank">
+                <h1>Weather Dashboard</h1>
+            </a>
+            <a class="github-link" href="https://github.com/mc4506/weather-dashboard" target="_blank">https://github.com/mc4506/weather-dashboard</a>
 
-                <li class="wrapper weather-widget-wrapper">
-                    <h2 class="turnstile">
-                        WEATHER WIDGET
-                    </h2>
-                    <div class="content weather-widget">
-                        <form class="search-city">
-                            <label for="city-input" class="label">Search Your City</label>
-                            <input id="city-input" type="text" size="12">
-                            <button id="search-btn" type="submit">Search</button>
-                        </form>
-                        <div class="weather-card">
-                            <h2 id="city"></h2>
-                            <h3 id="today"></h3>
-                            <div class="weather-card-content">
-                                <h4 id="current-weather"></h4>
-                                <img id="current-icon" src="" alt="weather icon">
-                            </div>
-                            <div class="weather-card-content">
-                                <h4 id="current-temp"></h4>
-                                <h4 id="today-high-temp"></h4>
-                                <h4 id="today-low-temp"></h4>
-                            </div>
-                            <div class="weather-card-content">
-                                <h4 id="current-humidity"></h4>
-                                <h4 id="current-wind"></h4>
-                                <h4 id="current-uv"></h4>
-                            </div>
-                        </div>
+            <img class="screenshot" src="assets/img/weather-dashboard.png" alt="Weather Dashboard">
+        </div>
+        <div class="product-card" id="3">
+            <a href="https://mc4506.github.io/code-quiz/" target="_blank">
+                <h1>Code-Quiz</h1>
+            </a>
+            <a class="github-link" href="https://github.com/mc4506/code-quiz" target="_blank">https://github.com/mc4506/code-quiz</a>
 
-                        <div class="forecast-wrapper">
-                            <div class="forecast-card" id="1">
-                                <h3 class='day'></h3>
-                                <img class="weather-icon" src="" alt="weather icon">
-                                <h4 class="high-temp"></h4>
-                                <h4 class="low-temp"></h4>
-                                <h4 class="humidity"></h4>
-                            </div>
-                            <div class="forecast-card" id="2">
-                                <h3 class='day'></h3>
-                                <img class="weather-icon" src="" alt="weather icon">
-                                <h4 class="high-temp"></h4>
-                                <h4 class="low-temp"></h4>
-                                <h4 class="humidity"></h4>
-                            </div>
-                            <div class="forecast-card" id="3">
-                                <h3 class='day'></h3>
-                                <img class="weather-icon" src="" alt="weather icon">
-                                <h4 class="high-temp"></h4>
-                                <h4 class="low-temp"></h4>
-                                <h4 class="humidity"></h4>
-                            </div>
-                            <div class="forecast-card" id="4">
-                                <h3 class='day'></h3>
-                                <img class="weather-icon" src="" alt="weather icon">
-                                <h4 class="high-temp"></h4>
-                                <h4 class="low-temp"></h4>
-                                <h4 class="humidity"></h4>
-                            </div>
-                            <div class="forecast-card" id="5">
-                                <h3 class='day'></h3>
-                                <img class="weather-icon" src="" alt="weather icon">
-                                <h4 class="high-temp"></h4>
-                                <h4 class="low-temp"></h4>
-                                <h4 class="humidity"></h4>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="collapseBtn">
-                        <img src="assets/icons/back_arrow.svg" alt="collapse">
-                    </button>
-                </li>
-                <li class="wrapper products-wrapper">
-                    <h2 class="turnstile">
-                        BOOTCAMP PROJECTS
-                    </h2>
-                    <div class="content product-card-row">
-                        <div class="product-card">
-                            <h3>Password Generator</h3>
-                            <div class="row">
-                                <label class="label" for="password-slider">Password Length</label>
-                                <p id="password-length">12</p>
-                            </div>
-                            <input type="range" min="8" max="16" value="12" id="password-slider">
-                            <div class="row">
-                                <label class="label" for="lowercase">Lowercase</label>
-                                <input class="checkbox" type="checkbox" id="lowercase" checked>
-                            </div>
-                            <div class="row">
-                                <label class="label" for="uppercase">Uppercase</label>
-                                <input class="checkbox" type="checkbox" id="uppercase">
-                            </div>
-                            <div class="row">
-                                <label class="label" for="numeric">Numbers</label>
-                                <input class="checkbox" type="checkbox" id="numeric">
-                            </div>
-                            <div class="row">
-                                <label class="label" for="special">Special Characters</label>
-                                <input class="checkbox" type="checkbox" id="special">
-                            </div>
-                            <button id="generate">Generate Password
-                            </button>
-                            <label class="label" for="password">Password</label>
-                            <input id="password" size="20"></input>
-                        </div>
-                        <div class="image-card">
-                            <a href="https://black03mach.github.io/ticker_query/" target="_blank">
-                                <img class="screenshot" src="assets/img/simpli-stocks.png" alt="Simpli-Stocks">
-                            </a>
-                            <a class="github-link" href="https://github.com/black03mach/ticker_query" target="_blank">Github Repo</a>
-                        </div>
-                        <div class="image-card">
-                            <a href="https://mc4506.github.io/code-quiz/" target="_blank">
-                                <img class="screenshot" src="assets/img/code-quiz.png" alt="Code Quiz">
-                            </a>
-                            <a class="github-link" href="https://github.com/mc4506/code-quiz" target="_blank">Github Repo</a>
-                        </div>
-                        <div class="image-card">
-                            <a href="https://mc4506.github.io/weather-dashboard/" target="_blank">
-                                <img class="screenshot" src="assets/img/weather-dashboard.png" alt="Weather Dashboard">
-                            </a>
-                            <a class="github-link" href="https://github.com/mc4506/weather-dashboard" target="_blank">Github Repo</a>
-                        </div>
-                    </div>
+            <img class="screenshot" src="assets/img/code-quiz_start.png" alt="Code Quiz">
+            <img class="screenshot" src="assets/img/code-quiz_question.png" alt="quiz question">
+            <img class="screenshot" src="assets/img/code-quiz_high-score.png" alt="quiz high score">
 
-                    <button class="collapseBtn">
-                        <img src="assets/icons/back_arrow.svg" alt="collapse">
-                    </button>
-                </li>
-                <li class="wrapper products-wrapper">
-                    <h2 class="turnstile">
-                        PERSONAL PROJECTS
-                    </h2>
-                    <div class="content product-card-row">
-                        <div class="image-card">
-                            <a href="https://mc4506.github.io/hangman-game/" target="_blank">
-                                <img class="screenshot" src="assets/img/hangman.png" alt="Hangman">
-                            </a>
-                            <a class="github-link" href="https://github.com/mc4506/hangman-game" target="_blank">Github Repo</a>
-                        </div>
-                        <div class="image-card">
-                            <a href="https://apps.apple.com/us/app/glass-analysis/id1519709413?ign-mpt=uo%3D4" target="_blank">
-                                <img class="screenshot" src="assets/img/glass-analysis.png" alt="Glass Analysis">
-                            </a>
-                        </div>
-                    </div>
+        </div>
+        <div class="product-card" id="4">
+            <a href="https://mc4506.github.io/hangman-game/" target="_blank">
+                <h1>Hangman</h1>
+            </a>
+            <a class="github-link" href="https://github.com/mc4506/hangman-game" target="_blank">https://github.com/mc4506/hangman-game</a>
 
-                    <button class="collapseBtn">
-                        <img src="assets/icons/back_arrow.svg" alt="collapse">
-                    </button>
-                </li>
-            </ul>
+            <img class="screenshot" src="assets/img/hangman.png" alt="Hangman">
+        </div>
+        <div class="product-card" id="5">
+            <a href="https://black03mach.github.io/ticker_query/" target="_blank">
+                <h1>Simpli-Stocks</h1>
+            </a>
+            <a class="github-link" href="https://github.com/black03mach/ticker_query" target="_blank">https://github.com/black03mach/ticker_query/ticker_query</a>
+
+            <img class="screenshot" src="assets/img/simpli-stocks.png" alt="Simpli-Stocks">
+        </div>
+        <div class="product-card" id="6">
+            <a href="https://apps.apple.com/us/app/glass-analysis/id1519709413?ign-mpt=uo%3D4" target="_blank">
+                <h1>Glass Analysis</h1>
+            </a>
+
+            <img class="screenshot" src="assets/img/glass-analysis.png" alt="Glass Analysis">
         </div>
 
+        <div class="wrapper">
+            <h2 class="turnstile">
+                PROJECTS
+            </h2>
+            <div class="content">
+                <ul class="project-list">
+                    <li>
+                        <h1 class="project" data-product="1">Password Generator</h1>
+
+                    </li>
+                    <li>
+                        <h1 class="project" data-product="2">Weather Dashboard</h1>
+                    </li>
+                    <li>
+                        <h1 class="project" data-product="3">Code-Quiz</h1>
+                    </li>
+                    <li>
+                        <h1 class="project" data-product="4">Hangman</h1>
+                    </li>
+                    <li>
+                        <h1 class="project" data-product="5">Simpli-Stocks</h1>
+                    </li>
+                    <li>
+                        <h1 class="project" data-product="6">Glass Analysis</h1>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
     </main>
 
     <!-- Sticky Nav at bottom -->
     <footer>
         <nav class="bottom-nav-container">
             <ul class="nav-list">
-                <!-- <li class="nav-list-item">
-                    <a href="#"><img src="assets/icons/internet.svg" alt="my work" class="icons">My Work</a>
-                </li> -->
-                <li class="nav-list-item">    
-                    <a href="resume.html"><img src="assets/icons/document.svg" alt="my resume" class="icons">My Resume</a>
+                <li class="nav-list-item">
+                    <a href="resume.html">My Resume</a>
                 </li>
                 <li class="nav-list-item">
-                    <a href="contact.html"><img src="assets/icons/email.svg" alt="contact me" class="icons">Contact Me</a>
-                </li>
-
-                <li class="nav-list-item" style="text-align: center;">
-                    <label class="switch">
-                        <input type="checkbox" id="footer-switch">
-                        <span class="slider round"></span>
-                    </label>
-                    <p class="switch-label">Desktop</p>
+                    <a href="contact.html">Contact Me</a>
                 </li>
             </ul>
         </nav>
