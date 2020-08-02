@@ -74,6 +74,7 @@ p>a {
     flex: 1 1 auto;
     border-bottom: 1px solid #b6b6b6;
     overflow: hidden;
+    -webkit-overflow-scrolling: touch
 }
 
 .bottom-nav-container {
@@ -128,7 +129,7 @@ p>a {
     padding-top: 16px;
     /* margin-bottom: 60px; */
     /* flex: 1 1 auto; */
-    overflow-y: scroll;
+    overflow: scroll;
     -webkit-overflow-scrolling: touch
 }
 
@@ -239,7 +240,7 @@ li:nth-child(3n+2) .project:hover {
     padding: 16px;
     display: none;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow: scroll;
     -webkit-overflow-scrolling: touch
     /* overflow-x: hidden; */
 }
@@ -302,7 +303,7 @@ li:nth-child(3n+2) .project:hover {
 
 #message {
     resize: none;
-    overflow-y: auto;
+    overflow: auto;
 }
 
 #name,
