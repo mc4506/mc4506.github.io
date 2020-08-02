@@ -128,7 +128,8 @@ p>a {
     padding-top: 16px;
     /* margin-bottom: 60px; */
     /* flex: 1 1 auto; */
-    overflow-y: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch
 }
 
 .turnstile {
@@ -238,8 +239,9 @@ li:nth-child(3n+2) .project:hover {
     padding: 16px;
     display: none;
     flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch
+    /* overflow-x: hidden; */
 }
 
 .product-card::after{
