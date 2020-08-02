@@ -73,7 +73,7 @@ p>a {
     /* height: 100%; */
     flex: 1 1 auto;
     border-bottom: 1px solid #b6b6b6;
-    overflow: scroll;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch
 }
 
