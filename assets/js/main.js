@@ -19,7 +19,7 @@ const animateClickProject = function(event) {
     $(this).parents('.content').siblings('.turnstile').css("cursor", "pointer");
     $(this).parents('.content').css("display", "none");
     // $(this).parents('.wrapper').css("overflow", "hidden");
-    $(this).parents('.wrapper').css("border-left", "1px solid #b6b6b6");
+    // $(this).parents('.wrapper').css("border-left", "1px solid #b6b6b6");
     $(this).parents('.wrapper').css("border-right", "1px solid #b6b6b6");
 
 
@@ -45,7 +45,7 @@ const animateClickTurnstile = function() {
     $(this).css("animation", "turn-up 0.3s ease-out both");
     $(this).css("cursor", "default");
     // $(this).parent().css("overflow", "auto");
-    $(this).parent().css("border", "none");
+    $(this).parent().css("border-right", "none");
     setTimeout(function() {
         $this.next().css("display", "block");
     }, 200);

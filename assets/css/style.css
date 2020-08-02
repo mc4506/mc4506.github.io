@@ -343,6 +343,10 @@ iframe {
         width: 60%;
     }
 
+    .wrapper {
+        border-left: 1px solid #b6b6b6;
+    }
+
     .bottom-nav-container {
         display: none;
     }
@@ -437,7 +441,7 @@ iframe {
 
     .form-container > #contact-form {
         width: calc(100% - 64px);
-        padding: 16px 32px;
+        padding: 20px 32px;
         /* margin: 0 32px; */
     }
 
