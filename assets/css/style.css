@@ -158,6 +158,16 @@ p>a {
     margin: 12px;
     cursor: pointer;
     padding: 0;
+    transition: color 0.25s ease;
+}
+li:nth-child(3n) .project:hover {
+    color: #03befc;
+}
+li:nth-child(3n+1) .project:hover {
+    color: #fc0377;
+}
+li:nth-child(3n+2) .project:hover {
+    color: #fc9803;
 }
 
 @keyframes turn-down {
