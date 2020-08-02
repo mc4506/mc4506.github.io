@@ -68,7 +68,7 @@ p>a {
 .main-container {
     margin: 0px 0px 60px 0px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
     /* height: 100%; */
     flex: 1 1 auto;
@@ -127,7 +127,7 @@ p>a {
     background: #f1f3f5;
     padding-top: 16px;
     /* margin-bottom: 60px; */
-    flex: 1 1 auto;
+    /* flex: 1 1 auto; */
     overflow-y: auto;
 }
 
@@ -233,14 +233,11 @@ li:nth-child(3n+2) .project:hover {
 
 .product-card {
     background: transparent;
-    width: calc(100% - 64px);
+    width: 100%;
     height: 100%;
     padding: 16px;
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 0px;
-    left: 32px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -280,7 +277,6 @@ li:nth-child(3n+2) .project:hover {
 .contact-me {
     color: #000000;
     font-size: 20px;
-    /* padding: 16px 0px; */
     margin-top: 32px;
 }
 
@@ -326,6 +322,10 @@ iframe {
     height: 860px;
 }
 
+.form-container {
+    display: none;
+}
+
 @media (min-width: 768px) {
 
     body {
@@ -334,8 +334,7 @@ iframe {
 
     .about-me-wrapper {
         width: 40%;
-        /* height: 100%; */
-        flex: 1 1 auto;
+        /* flex: 1 1 auto; */
     }
 
     .main-container {
@@ -373,12 +372,41 @@ iframe {
 
 @media (min-width: 1200px) {
 
+    @keyframes collapse {
+        0% {
+            width: 60%;
+        }
+
+        100% {
+            width: 32px;
+        }
+    }
+
+    @keyframes expand {
+        0% {
+            width: 32px;
+        }
+
+        100% {
+            width: 60%;
+        }
+    }
+
     .about-me-wrapper {
         width: 30%;
     }
 
     .main-container {
         width: 70%;
+    }
+
+    .wrapper  {
+        width: 60%;
+    }
+
+    .product-card {
+        width: calc(60% - 32px);
+        /* padding: 16px 0px; */
     }
 
     h1 {
@@ -398,6 +426,19 @@ iframe {
         width: 50%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .form-container {
+        display: block;
+        width: 40%;
+        background: #cee7ed;
+        border-left: 1px solid #b6b6b6;
+    }
+
+    .form-container > #contact-form {
+        width: calc(100% - 64px);
+        padding: 16px 32px;
+        /* margin: 0 32px; */
     }
 
 }
