@@ -1,7 +1,8 @@
 .menu-btn {
   position: absolute;
   top: 2rem;
-  right: 2rem; }
+  right: 2rem;
+  cursor: pointer; }
   .menu-btn .hamburger-menu-line {
     width: 24px;
     height: 3px;
@@ -10,33 +11,28 @@
 
 .menu-items {
   margin: 0;
-  display: flex;
+  display: none;
   position: absolute;
   top: 2rem;
   right: 2rem; }
 
 .menu-item {
   list-style-type: none; }
-  .menu-item.current {
-    color: #444; }
   .menu-item a {
     font-size: 1.2rem;
     color: #777;
     padding-left: 2rem; }
 
-@media screen and (min-width: 576px) {
-  .menu-items {
-    display: none; } }
+.current a {
+  color: #111; }
 
 @media screen and (min-width: 768px) {
-  .icons a i {
-    transform: translate(0px, calc(100%/2)); } }
-
-@media screen and (min-width: 992px) {
   .menu-items {
     display: flex; }
   .menu-btn {
-    display: none; }
+    display: none; } }
+
+@media screen and (min-width: 992px) {
   main {
     width: 80%;
     margin-left: auto;
@@ -89,10 +85,11 @@ header {
   margin: 0 2rem;
   display: flex;
   justify-content: space-around; }
-  .icons a {
-    padding: 1rem; }
-    .icons a i {
-      filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.25)); }
+  .icons a i {
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.25));
+    transform: translate(0px, calc(100%/2)); }
+    .icons a i:active {
+      transform: translateY(calc(100%/2 + 2px)); }
   .icons .fa-github {
     color: #000000; }
   .icons .fa-linkedin {

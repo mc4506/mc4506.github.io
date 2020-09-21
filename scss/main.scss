@@ -58,10 +58,10 @@ header {
     justify-content: space-around;
 
     a {
-        padding: 1rem;
-
         i {
             filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.25));
+            transform: translate(0px, calc(100%/2) );
+            @include iconClick;
         }
     }
 

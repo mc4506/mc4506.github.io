@@ -2,6 +2,7 @@
     position: absolute;
     top: 2rem;
     right: 2rem;
+    cursor: pointer;
 
     .hamburger-menu-line {
         width: 24px;
@@ -13,7 +14,7 @@
 
 .menu-items {
     margin: 0;
-    display: flex;
+    display: none;
     position: absolute;
     top: 2rem;
     right: 2rem;
@@ -22,13 +23,15 @@
 .menu-item {
     list-style-type: none;
 
-    &.current {
-        color: $menu-color-active;
-    }
-
     a {
         font-size: 1.2rem;
         color: $menu-color;
         padding-left: 2rem;
+    }
+}
+
+.current {
+    a {
+        color: $menu-color-active;
     }
 }

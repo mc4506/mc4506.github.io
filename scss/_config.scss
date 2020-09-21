@@ -7,9 +7,15 @@ $section-heading-text-color: #888;
 
 $menu-color: #777;
 
-$menu-color-active: #444;
+$menu-color-active: #111;
 
 $card-shadow: 0px 10px 46px -24px rgba(0,0,0,0.75);
+
+@mixin iconClick {
+    &:active {
+        transform: translateY(calc(100%/2 + 2px));
+    }
+}
 
 @mixin mediaSm {
     @media screen and (min-width: 576px) {

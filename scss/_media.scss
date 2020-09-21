@@ -1,21 +1,8 @@
 @include mediaSm {
-    .menu-items {
-        display: none;
-    }
 
 }
 
 @include mediaMd {
-    .icons {
-        a {
-            i {
-                transform: translate(0px, calc(100%/2) );
-            }
-        }
-    }
-}
-
-@include mediaLg {
     .menu-items {
         display: flex;
     }
@@ -23,7 +10,9 @@
     .menu-btn {
         display: none;
     }
+}
 
+@include mediaLg {
     main {
         width: 80%;
         margin-left: auto;
