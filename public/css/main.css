@@ -1,0 +1,101 @@
+.menu-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem; }
+  .menu-btn .hamburger-menu-line {
+    width: 24px;
+    height: 3px;
+    margin-bottom: 4px;
+    background: #777; }
+
+.menu-items {
+  margin: 0;
+  display: flex;
+  position: absolute;
+  top: 2rem;
+  right: 2rem; }
+
+.menu-item {
+  list-style-type: none; }
+  .menu-item.current {
+    color: #444; }
+  .menu-item a {
+    font-size: 1.2rem;
+    color: #777;
+    padding-left: 2rem; }
+
+@media screen and (min-width: 576px) {
+  .menu-items {
+    display: none; } }
+
+@media screen and (min-width: 768px) {
+  .icons a i {
+    transform: translate(0px, calc(100%/2)); } }
+
+@media screen and (min-width: 992px) {
+  .menu-items {
+    display: flex; }
+  .menu-btn {
+    display: none; }
+  main {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media screen and (min-width: 1200px) {
+  main {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto; } }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  color: #000;
+  text-decoration: none; }
+
+body {
+  background: #fff5df;
+  color: #000;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+
+header {
+  width: 100%; }
+
+.container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+.main-content {
+  line-height: 1.5;
+  margin: 6rem 1.5rem 2rem 1.5rem;
+  padding: 1.5rem;
+  background: #ffd473;
+  border-radius: 0.4rem;
+  box-shadow: 0px 10px 46px -24px rgba(0, 0, 0, 0.75); }
+  .main-content h2 {
+    margin: 0; }
+    .main-content h2.section-heading {
+      color: #888;
+      font-size: 1rem; }
+  .main-content .my-name {
+    color: #4582EB;
+    font-size: 1.75rem;
+    font-weight: 400; }
+
+.icons {
+  margin: 0 2rem;
+  display: flex;
+  justify-content: space-around; }
+  .icons a {
+    padding: 1rem; }
+    .icons a i {
+      filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.25)); }
+  .icons .fa-github {
+    color: #000000; }
+  .icons .fa-linkedin {
+    color: #0077b5; }
+  .icons .fa-envelope {
+    color: #e52d27; }

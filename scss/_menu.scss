@@ -1,0 +1,34 @@
+.menu-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    .hamburger-menu-line {
+        width: 24px;
+        height: 3px;
+        margin-bottom: 4px;
+        background: $menu-color;
+    }
+}
+
+.menu-items {
+    margin: 0;
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.menu-item {
+    list-style-type: none;
+
+    &.current {
+        color: $menu-color-active;
+    }
+
+    a {
+        font-size: 1.2rem;
+        color: $menu-color;
+        padding-left: 2rem;
+    }
+}
