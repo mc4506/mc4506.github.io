@@ -1,6 +1,7 @@
 @import 'config';
 @import 'menu';
 @import 'media';
+@import 'projects';
 
 * {
     box-sizing: border-box;
@@ -43,12 +44,12 @@ header {
             font-size: 1rem;
         }
     }
+}
 
-    .my-name {
-        color: $primary-color;
-        font-size: 1.75rem;
-        font-weight: 400;
-    }
+.section-title {
+    color: $primary-color;
+    font-size: 1.75rem;
+    font-weight: 400;
 }
 
 .icons {
