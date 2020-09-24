@@ -3,12 +3,12 @@
     grid-template-columns: repeat(4, 1fr);
 
     .project {
-        grid-column: 2 / span 3;
+        grid-column: 1 / span 4;
 
         line-height: 1.5;
-        margin: 6rem 1.5rem 2rem 1.5rem;
+        margin: 4rem 1.5rem 2rem 1.5rem;
         padding: 1.5rem;
-        background: $complementary-color;
+        background: $project-color;
         border-radius: 0.4rem;
         box-shadow: $card-shadow;
     

@@ -30,7 +30,9 @@
   .menu-items {
     display: flex; }
   .menu-btn {
-    display: none; } }
+    display: none; }
+  .projects-container .project {
+    grid-column: 2 / span 3; } }
 
 @media screen and (min-width: 992px) {
   main,
@@ -50,11 +52,11 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); }
   .projects-container .project {
-    grid-column: 2 / span 3;
+    grid-column: 1 / span 4;
     line-height: 1.5;
-    margin: 6rem 1.5rem 2rem 1.5rem;
+    margin: 4rem 1.5rem 2rem 1.5rem;
     padding: 1.5rem;
-    background: #ffd473;
+    background: #A9FFB9;
     border-radius: 0.4rem;
     box-shadow: 0px 10px 46px -24px rgba(0, 0, 0, 0.75); }
     .projects-container .project .screenshot {
@@ -76,11 +78,12 @@ a {
   text-decoration: none; }
 
 body {
-  background: #fff5df;
+  background: #ffffff;
   color: #000;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
 
 header {
+  margin-top: 2rem;
   width: 100%; }
 
 .container {
@@ -90,7 +93,7 @@ header {
 
 .main-content {
   line-height: 1.5;
-  margin: 6rem 1.5rem 2rem 1.5rem;
+  margin: 4rem 1.5rem 2rem 1.5rem;
   padding: 1.5rem;
   background: #ffd473;
   border-radius: 0.4rem;

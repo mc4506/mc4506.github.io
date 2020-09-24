@@ -10,6 +10,12 @@
     .menu-btn {
         display: none;
     }
+
+    .projects-container {
+        .project {
+            grid-column: 2 / span 3;
+        }
+    }
 }
 
 @include mediaLg {

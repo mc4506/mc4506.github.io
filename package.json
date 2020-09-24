@@ -4,8 +4,7 @@
   "description": "Portfolio",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
-    "build": "webpack --config ./build/webpack.config.js"
+    "sass": "node-sass -w scss/ -o assets/css/ --recursive"
   },
   "repository": {
     "type": "git",
@@ -18,11 +17,6 @@
   },
   "homepage": "https://github.com/mc4506/mc4506.github.io#readme",
   "dependencies": {
-    "handlebars": "^4.7.6",
     "node-sass": "^4.14.1"
-  },
-  "devDependencies": {
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12"
   }
 }

@@ -19,6 +19,7 @@ body {
 }
 
 header {
+    margin-top: 2rem;
     width: 100%;
 }
 
@@ -30,7 +31,7 @@ header {
 
 .main-content {
     line-height: 1.5;
-    margin: 6rem 1.5rem 2rem 1.5rem;
+    margin: 4rem 1.5rem 2rem 1.5rem;
     padding: 1.5rem;
     background: $complementary-color;
     border-radius: 0.4rem;
