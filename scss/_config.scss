@@ -1,0 +1,43 @@
+$background-color: #ffffff;
+
+$primary-color: #4582EB;
+$complementary-color: #ffd473;
+$project-color: #A9FFB9;
+
+$section-heading-text-color: #888;
+
+$menu-color: #777;
+
+$menu-color-active: #111;
+
+$card-shadow: 0px 10px 46px -24px rgba(0,0,0,0.75);
+
+@mixin iconClick {
+    &:active {
+        transform: translateY(calc(100%/2 + 2px));
+    }
+}
+
+@mixin mediaSm {
+    @media screen and (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin mediaMd {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mediaLg {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin mediaXl {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}

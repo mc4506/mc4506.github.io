@@ -1,0 +1,37 @@
+@include mediaSm {
+
+}
+
+@include mediaMd {
+    .menu-items {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .projects-container {
+        .project {
+            grid-column: 2 / span 3;
+        }
+    }
+}
+
+@include mediaLg {
+    main,
+    .projects-container {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@include mediaXl {
+    main,
+    .projects-container {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

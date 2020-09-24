@@ -1,0 +1,33 @@
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    .project {
+        grid-column: 1 / span 4;
+
+        line-height: 1.5;
+        margin: 4rem 1.5rem 2rem 1.5rem;
+        padding: 1.5rem;
+        background: $project-color;
+        border-radius: 0.4rem;
+        box-shadow: $card-shadow;
+    
+        .screenshot {
+            width: 100%;
+        }
+    
+        h2 {
+            margin: 0;
+    
+            &.section-heading{
+                color: $section-heading-text-color;
+                font-size: 1rem;
+            }
+        }
+    
+        p {
+            line-height: 1.5;
+            margin-top: 0;
+        }
+    }
+}
