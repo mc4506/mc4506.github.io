@@ -1,6 +1,10 @@
+.nav {
+    background: $header-background-color;
+}
+
 .menu-btn {
     position: absolute;
-    top: 2rem;
+    top: 1.5rem;
     right: 2rem;
     cursor: pointer;
 
@@ -8,15 +12,15 @@
         width: 24px;
         height: 3px;
         margin-bottom: 4px;
-        background: $menu-color;
+        background: $menu-color-dark;
     }
 }
 
 .menu-items {
     margin: 0;
-    display: none;
+    display: flex;
     position: absolute;
-    top: 2rem;
+    top: 1.5rem;
     right: 2rem;
 }
 
@@ -25,7 +29,7 @@
 
     a {
         font-size: 1.2rem;
-        color: $menu-color;
+        color: $menu-color-dark;
         padding-left: 2rem;
     }
 }
